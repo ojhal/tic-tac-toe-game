@@ -14,6 +14,11 @@ export default class Game extends Component {
     }
   }
   render() {
+    const history = this.state.history;
+    const current = history[this.state.stepNumber];
+
+
+
     return (
       <div className="game">
         <div className="game-board">

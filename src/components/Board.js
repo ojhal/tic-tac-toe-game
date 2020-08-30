@@ -3,7 +3,7 @@ import Square from './Square';
 
 export default class Board extends Component {
   renderSquare(i) {
-    return <Square value={this.props.square[i]}
+    return <Square value={this.props.squares[i]}
       onClick={() => this.props.onClick(i)}
     />
   }
@@ -29,7 +29,7 @@ export default class Board extends Component {
 
 
       </div>
-    )
+    );
   }
 
 }
