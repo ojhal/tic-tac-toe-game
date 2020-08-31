@@ -13,6 +13,11 @@ export default class Game extends Component {
 
     }
   }
+  handleClick(i) {
+    const history
+  }
+
+
   render() {
     const history = this.state.history;
     const current = history[this.state.stepNumber];
@@ -22,7 +27,7 @@ export default class Game extends Component {
     return (
       <div className="game">
         <div className="game-board">
-          <Board onClick={(i) => this.onClick(i)}
+          <Board onClick={(i) => this.handleClick(i)}
             squares={current.squares} />
 
         </div>
