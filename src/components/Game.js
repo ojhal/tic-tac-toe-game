@@ -18,6 +18,9 @@ export default class Game extends Component {
     const current = history[history.length - 1];
     const squares = current.squares.slice();
     const winner = calculateWinner(squares);
+    if (winner || squares[i]) {
+      return;
+    }
 
     squares[i] = this.state.xIsNext ? 'X' : '0';
     this.setState({
