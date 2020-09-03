@@ -17,6 +17,8 @@ export default class Game extends Component {
     const history = this.state.history.slice(0, this.state.stepNumber + 1);
     const current = history[history.length - 1];
     const squares = current.squares.slice();
+    const winner = calculateWinner(squares);
+
     squares[i] = this.state.xIsNext ? 'X' : '0';
     this.setState({
       history: history.concat({
@@ -59,5 +61,9 @@ function calculateWinner(squares) {
   ];
   for (let i = 0; i < lines.length; i++) {
     const [a, b, c] = lines[i];
+    if (squares[a] && squares[a] === squares[b] === squares[c]) {
+      return squares[a];
+    }
   }
+  return null;
 }
