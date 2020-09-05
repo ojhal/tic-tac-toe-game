@@ -47,6 +47,12 @@ export default class Game extends Component {
         </li>
       )
     });
+    let status;
+    if (winner) {
+      status = 'Winner is' + winner;
+    } else {
+      status = 'Next Player is' + (this.state.xIsNext ? 'x' : 'o');
+    }
 
 
 
@@ -56,6 +62,11 @@ export default class Game extends Component {
         <div className="game-board">
           <Board onClick={(i) => this.handleClick(i)}
             squares={current.squares} />
+
+        </div>
+        <div className="game-info">
+          <div>{status}</div>
+          <ul>{moves}</ul>
 
         </div>
       </div>
